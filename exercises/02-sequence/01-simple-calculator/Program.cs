@@ -9,6 +9,11 @@ Console.WriteLine("");
 // TODO: Add at least 4 calculations using +, -, *, and /
 // Format: "number operation number = result"
 // Example: Console.WriteLine("5 + 3 = " + (5 + 3));
+Console.WriteLine("5 + 3 = " + (5 + 3));
+Console.WriteLine("10 - 4  = " + (10 - 4));
+Console.WriteLine("6 * 7 = " + (6 * 7));
+Console.WriteLine("20 / 4 = " + (20 / 4));
+
 
 Console.WriteLine("");
 Console.WriteLine("Thank you for using my calculator!");

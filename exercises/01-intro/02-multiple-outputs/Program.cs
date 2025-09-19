@@ -3,7 +3,10 @@
 
 using System;
 
-Console.WriteLine("This is the first line of my story.");
+Console.WriteLine("Today I woke up early.");
+Console.WriteLine("The sun was shining brightly.");
+Console.WriteLine("Then I went to school.");
+Console.WriteLine("Programming class was my favorite part of the day!");
 
 // TODO: Add at least 4 more Console.WriteLine statements to complete your story
 // Remember: each statement should end with a semicolon

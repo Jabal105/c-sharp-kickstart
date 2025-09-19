@@ -1,8 +1,8 @@
 // Exercise 01-03: Comments and Code
 // TODO: Add a comment here explaining what this program does
-
+//This program explain how to use comments in C#
 using System;
-
+//This line shows a welcome message
 Console.WriteLine("Welcome to my first C# program!");
 
 // TODO: Add a comment above this line explaining what it does
