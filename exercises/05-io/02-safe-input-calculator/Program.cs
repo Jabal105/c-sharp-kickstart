@@ -7,50 +7,72 @@ Console.WriteLine("Safe Input Calculator");
 Console.WriteLine("====================");
 Console.WriteLine("");
 
-// TODO: Get first number
-Console.WriteLine("Enter first number:");
-string input1 = Console.ReadLine();
-// double firstNumber = double.Parse(input1);
+// Get first number
+Console.Write("Enter first number: ");
+double firstNumber;
+// Use a do-while loop to repeatedly ask for input until a valid number is entered
+while (!double.TryParse(Console.ReadLine(), out firstNumber))
+{
+    Console.WriteLine("Invalid input. Please enter a valid number.");
+    Console.Write("Enter first number: ");
+}
 
-// TODO: Get second number
-Console.WriteLine("Enter second number:");
-string input2 = Console.ReadLine();
-// double secondNumber = double.Parse(input2);
+// Get second number
+Console.Write("Enter second number: ");
+double secondNumber;
+while (!double.TryParse(Console.ReadLine(), out secondNumber))
+{
+    Console.WriteLine("Invalid input. Please enter a valid number.");
+    Console.Write("Enter second number: ");
+}
 
-// TODO: Get operation
-Console.WriteLine("Enter operation (+, -, *, /):");
-// string operation = Console.ReadLine();
+// Get operation
+string operation;
+while (true)
+{
+    Console.Write("Enter operation (+, -, *, /): ");
+    operation = Console.ReadLine();
+    if (operation == "+" || operation == "-" || operation == "*" || operation == "/")
+    {
+        break; // Exit the loop if the operation is valid
+    }
+    else
+    {
+        Console.WriteLine("Error: Invalid operation! Please enter +, -, *, or /.");
+    }
+}
 
-// TODO: Perform calculation with basic error checking
-// double result = 0;
-//
-// if (operation == "+")
-// {
-//     result = firstNumber + secondNumber;
-// }
-// else if (operation == "-")
-// {
-//     result = firstNumber - secondNumber;
-// }
-// else if (operation == "*")
-// {
-//     result = firstNumber * secondNumber;
-// }
-// else if (operation == "/")
-// {
-//     if (secondNumber != 0)
-//     {
-//         result = firstNumber / secondNumber;
-//     }
-//     else
-//     {
-//         Console.WriteLine("Error: Cannot divide by zero!");
-//     }
-// }
-// else
-// {
-//     Console.WriteLine("Error: Invalid operation!");
-// }
+// Perform calculation
+double result = 0;
+bool isValidOperation = true;
 
-// TODO: Display result using string interpolation
-// Console.WriteLine($"Calculation: {firstNumber} {operation} {secondNumber} = {result:F2}");
+if (operation == "+")
+{
+    result = firstNumber + secondNumber;
+}
+else if (operation == "-")
+{
+    result = firstNumber - secondNumber;
+}
+else if (operation == "*")
+{
+    result = firstNumber * secondNumber;
+}
+else if (operation == "/")
+{
+    if (secondNumber != 0)
+    {
+        result = firstNumber / secondNumber;
+    }
+    else
+    {
+        Console.WriteLine("Error: Cannot divide by zero!");
+        isValidOperation = false;
+    }
+}
+
+// Display result only if the operation was valid
+if (isValidOperation)
+{
+    Console.WriteLine($"Calculation: {firstNumber} {operation} {secondNumber} = {result:F2}");
+}
